@@ -1,0 +1,6 @@
+public <S> = <NP>|<t1>|<t2>;
+
+<NP> = what is project <topic>;
+<topic> = topic | subject;
+<t1> = can i get project details;
+<t2> = what is project about;

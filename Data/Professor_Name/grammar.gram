@@ -1,0 +1,9 @@
+public <S> = <NP> <VP><Teach> | <thing>;
+
+<NP> = Which|who;
+<VP> = professor | teacher | professor;
+<Teach> = Teach | take;
+<thing> = What is professor name;
+
+
+

@@ -1,0 +1,11 @@
+public <S> = <NP> <VP> | <thing>;
+
+<NP> = When | Where | <WW><DD>;
+<VP> = <Verb><exam>;
+<WW> = which|what;
+<DD> = day | date;
+<Verb> = is | was;
+<exam> = exam | Final test| examination| final quiz;
+<thing> = how <duration> <Verb><exam>;
+<duration> = long | hours;
+

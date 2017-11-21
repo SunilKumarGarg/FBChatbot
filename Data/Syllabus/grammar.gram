@@ -1,0 +1,5 @@
+public <S> = <NP>|<t1>|<t2>;
+
+<NP> = what is syllabus;
+<t1> = can i get syllabus;
+<t2> = what is subject topics;
