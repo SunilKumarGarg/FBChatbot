@@ -1,0 +1,54 @@
+where professor can sit
+where professor can meet
+where professor can office
+where professor should sit
+where professor should meet
+where professor should office
+where professor might sit
+where professor might meet
+where professor might office
+where teacher can sit
+where teacher can meet
+where teacher can office
+where teacher should sit
+where teacher should meet
+where teacher should office
+where teacher might sit
+where teacher might meet
+where teacher might office
+where prop can sit
+where prop can meet
+where prop can office
+where prop should sit
+where prop should meet
+where prop should office
+where prop might sit
+where prop might meet
+where prop might office
+which place professor can sit
+which place professor can meet
+which place professor can office
+which place professor should sit
+which place professor should meet
+which place professor should office
+which place professor might sit
+which place professor might meet
+which place professor might office
+which place teacher can sit
+which place teacher can meet
+which place teacher can office
+which place teacher should sit
+which place teacher should meet
+which place teacher should office
+which place teacher might sit
+which place teacher might meet
+which place teacher might office
+which place prop can sit
+which place prop can meet
+which place prop can office
+which place prop should sit
+which place prop should meet
+which place prop should office
+which place prop might sit
+which place prop might meet
+which place prop might office

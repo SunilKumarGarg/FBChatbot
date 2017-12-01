@@ -6,7 +6,7 @@ app = Flask(__name__,static_url_path="/static")
 @app.route('/message', methods=['POST'])
 def reply():
     result = model.predictTarget(request.form['msg'])
-    target = TrainingData().returnTarget(result)
+    target = RawData().returnTarget(result)
 
     if target == "None":
         text = execute.decode_line(sess, model_SeqToSeq, enc_vocab, rev_dec_vocab, request.form['msg'])
@@ -31,7 +31,7 @@ sess = tf.Session()
 sess, model_SeqToSeq, enc_vocab, rev_dec_vocab = execute.init_session(sess, conf='seq2seq/seq2seq_serve.ini')
 
 from model import Model
-from prepareTrainingData import TrainingData
+from prepareRawData import RawData
 from prepareResponse import ResponseData
 
 model = Model()

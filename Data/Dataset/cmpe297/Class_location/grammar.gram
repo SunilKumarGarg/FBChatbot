@@ -1,0 +1,11 @@
+public <S> = <NP> <VP> | <NP>;
+
+<NP> = /5/ where <class> | /1/ which place <class>;
+<VP> = <Modal> <OCCUR>;
+
+<OCCUR> = occur | happen | meet | conduct;
+
+<Modal> = /10/ can | /15/ should | /5/ might;
+
+<class> = class | lecture | classroom;
+<t1> = Tell me about <class> location

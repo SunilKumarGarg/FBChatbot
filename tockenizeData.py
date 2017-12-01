@@ -8,7 +8,8 @@ class TockenizeData:
     def getTockenizedDataWithStem(statement):
         tokens = nltk.word_tokenize(statement)
 
-        filtered_words = [word for word in tokens if word not in stopwords.words('english')]
+        #filtered_words = [word for word in tokens if word not in stopwords.words('english')]
+        filtered_words = [word for word in tokens]
 
         f = []
         LS = LancasterStemmer()
@@ -19,5 +20,6 @@ class TockenizeData:
     @staticmethod
     def getTockenizedData(statement):
         tokens = nltk.word_tokenize(statement)
-        filtered_words = [word for word in tokens if word not in stopwords.words('english')]
+        #filtered_words = [word for word in tokens if word not in stopwords.words('english')]
+        filtered_words = [word for word in tokens]
         return filtered_words

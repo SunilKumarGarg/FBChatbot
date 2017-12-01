@@ -1,0 +1,7 @@
+public <S> = <Hello> | <Name> | <Word>;
+
+
+<Name> = My name is;
+<Hello> = hello | Hi | hey;
+<Word> = help | there;
+

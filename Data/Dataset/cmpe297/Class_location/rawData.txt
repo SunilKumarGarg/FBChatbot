@@ -1,0 +1,78 @@
+where class can occur
+where class can happen
+where class can meet
+where class can conduct
+where class should occur
+where class should happen
+where class should meet
+where class should conduct
+where class might occur
+where class might happen
+where class might meet
+where class might conduct
+where lecture can occur
+where lecture can happen
+where lecture can meet
+where lecture can conduct
+where lecture should occur
+where lecture should happen
+where lecture should meet
+where lecture should conduct
+where lecture might occur
+where lecture might happen
+where lecture might meet
+where lecture might conduct
+where classroom can occur
+where classroom can happen
+where classroom can meet
+where classroom can conduct
+where classroom should occur
+where classroom should happen
+where classroom should meet
+where classroom should conduct
+where classroom might occur
+where classroom might happen
+where classroom might meet
+where classroom might conduct
+which place class can occur
+which place class can happen
+which place class can meet
+which place class can conduct
+which place class should occur
+which place class should happen
+which place class should meet
+which place class should conduct
+which place class might occur
+which place class might happen
+which place class might meet
+which place class might conduct
+which place lecture can occur
+which place lecture can happen
+which place lecture can meet
+which place lecture can conduct
+which place lecture should occur
+which place lecture should happen
+which place lecture should meet
+which place lecture should conduct
+which place lecture might occur
+which place lecture might happen
+which place lecture might meet
+which place lecture might conduct
+which place classroom can occur
+which place classroom can happen
+which place classroom can meet
+which place classroom can conduct
+which place classroom should occur
+which place classroom should happen
+which place classroom should meet
+which place classroom should conduct
+which place classroom might occur
+which place classroom might happen
+which place classroom might meet
+which place classroom might conduct
+where class
+where lecture
+where classroom
+which place class
+which place lecture
+which place classroom

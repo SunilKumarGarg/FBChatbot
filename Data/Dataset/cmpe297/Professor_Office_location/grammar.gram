@@ -1,0 +1,11 @@
+public <S> = <NP> <VP>;
+
+<NP> = /5/ where <professor> | /1/ which place <professor>;
+<VP> = <Modal> <OCCUR>;
+
+<OCCUR> = sit | meet | office;
+
+<Modal> = /10/ can | /15/ should | /5/ might;
+
+<professor> = professor | teacher | prop;
+

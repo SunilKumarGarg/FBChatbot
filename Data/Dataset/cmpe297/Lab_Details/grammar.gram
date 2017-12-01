@@ -1,0 +1,9 @@
+public <S> = <NP> <VP> | <NP><lab>| <Description>about<lab>;
+
+<NP> = How | What;
+<VP> = <Modal> <lab>;
+
+
+<lab> = lab | assignment;
+<Modal> = /10/ is | /15/ was | /5/ may;
+<Description> = Describe | tell | elaborate;

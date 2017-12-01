@@ -4,9 +4,9 @@ from tockenizeData import TockenizeData
 
 class ReadResponseData:
     @staticmethod
-    def __init__():
+    def __init__(Context):
         ReadResponseData.responseDataFilePath = []
-        for path, dirs, files in os.walk("Data"):
+        for path, dirs, files in os.walk("Data/Dataset/"+Context):
             for f in files:
                 if "response.txt" in f:
                     ReadResponseData.responseDataFilePath.append(path+"/"+f)
@@ -22,36 +22,36 @@ class ReadResponseData:
             lines = []
             for line in fileEntry:
                 lines.append(line)
-            responseData[dir] = lines
+            responseData[str(dir).lower()] = lines
 
         return responseData
     
 
-class ReadTrainingData:
+class ReadRawData:
     
     @staticmethod
-    def __init__():
-        ReadTrainingData.trainingDataFilePath = []
-        for path, dirs, files in os.walk("Data"):
+    def __init__(Context):
+        ReadRawData.RawDataFilePath = []
+        for path, dirs, files in os.walk("Data/Dataset/"+Context):
             for f in files:
-                if "trainingData.txt" in f:
-                    ReadTrainingData.trainingDataFilePath.append(path+"/"+f)
+                if "rawData.txt" in f:
+                    ReadRawData.RawDataFilePath.append(path+"/"+f)
 
     @staticmethod
     def getData():
-        trainingData = {}
-        for f in ReadTrainingData.trainingDataFilePath:
+        RawData = {}
+        for f in ReadRawData.RawDataFilePath:
             dir,_ = os.path.split(os.path.abspath(f))
             _,dir = os.path.split(dir)
             fileStream = open(f)
             fileEntry = fileStream.readlines()
             lines = []
             for line in fileEntry:
-                lines.append(TockenizeData.getTockenizedDataWithStem(line))
-            trainingData[dir] = lines
+                lines.append(TockenizeData.getTockenizedDataWithStem(str(line).lower()))
+            RawData[str(dir).lower()] = lines
 
-        return trainingData
+        return RawData
 
 
 if __name__ == '__main__':
-    print ReadTrainingData().getData()
+    print ReadRawData("cmpe297").getData()

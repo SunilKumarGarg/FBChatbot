@@ -1,11 +1,16 @@
 from flask import Flask, render_template, request
 from flask import jsonify, request
 import json, requests
+import pickle
+from json import dumps
+import spellCheck
+import dateutil.parser
 
 app = Flask(__name__)
 
-PAT = "EAACyecYYj3EBABZC4y5h067W7gF9FRq6EmkP2OMyy5Nwu3HwM31H18TOIeNx9cLSSK4OFjqRky6qBThN6rFSEEG7kHmBkiIQOc6IPTho6ZBMZB8LKEad0WZB3FI6qIE3KYg2Xmb81YVgcaXP4ChgbyGYVj7xN1PkIULTHWRg5QZDZD"
+PAT = "EAACyecYYj3EBANIADdMnUIrgz0ZBrdoORl1yr028DrRN0eDUmiRGtwsGOXAwEFRkmRdQ0uakb0qzoyh8sjoJEorGZBUb92bgaSQody6NGwGlrMSBxZBzokrVC7ZAZCPhEM3Mfssb6ck7Gs04wlmKlgcAidgPZC96GTfb4lL44zLgZDZD"
 VERIFICATION_TOKEN = 'ThisIsMe'
+fileBackup = "Chatbackup"
 
 @app.route('/', methods=['GET'])
 def handle_verification():
@@ -21,23 +26,88 @@ def handle_verification():
 def reply():
     payload = request.get_data()
 
+    #To do       
+
     for sender_id, message in messaging_events(payload):
         try:
             if message['type'] == 'text':
-                result = model.predictTarget(message["data"])
-                target = TrainingData().returnTarget(result)
+                sentence = str(message["data"]).lower()
+                # try:
+                #     date, data = dateutil.parser.parse(sentence, fuzzy_with_tokens=True)
+                #     sent = []
+                #     sent.append(str(date))
+                #     for w in list(data):
+                #         sent.append(w)
+                #     sentence = " ".join(sent)
+                # except:
+                #     print "exception"
+
+                # words = sentence.split(" ")
+                # correctWords = []
+                # for w in words:
+                #     correctWords.append(spellCheck.correction(w))
+
+                # sentence = " ".join(correctWords)
+                context = loadChatHistory(str(sender_id))                
+                c = getContext(sentence)
+                print sentence
+                if sentence != str(message["data"]).lower():
+                    send_message(PAT, sender_id, "User Input:" + sentence)
+                    
+
+                if c != "None":
+                    context = c
+
+                result = model.predictTarget(context,sentence)
+                target = RawData(context).returnTarget(result)
 
                 if target == "None":
-                    text = execute.decode_line(sess, model_SeqToSeq, enc_vocab, rev_dec_vocab, message["data"])
-                else:
-                    text = ResponseData().getResponseData(target)
+                    words = sentence.split(" ")
 
+                    correctWords = []
+                    for w in words:
+                        correctWords.append(spellCheck.correction(w))
+
+                    sentence = " ".join(correctWords)
+                    print sentence
+                    if sentence != str(message["data"]).lower():
+                        send_message(PAT, sender_id, "User Input:" + sentence)
+                    result = model.predictTarget(context,sentence)
+                    target = RawData(context).returnTarget(result)
+
+                    if target == "None":
+                        text = execute.decode_line(sess, model_SeqToSeq, enc_vocab, rev_dec_vocab, sentence)
+                    else:
+                        text = ResponseData(context).getResponseData(target)
+                else:
+                    text = ResponseData(context).getResponseData(target)
+
+                saveChatHistory(context, str(sender_id))
                 send_message(PAT, sender_id, text)
         except:
             print "No Message"
             
     return "ok"
 
+def getContext(var):
+    contextList = ["cmpe297", "cmpe257"]
+    for c in contextList:
+        if c in var:
+            return c
+    return "None"
+
+def saveChatHistory(object, sender_id):
+    filehandler = open(fileBackup+ "/" +sender_id, 'w') 
+    pickle.dump(object, filehandler)
+
+def loadChatHistory(sender_id):
+    try:
+        filehandler = open(fileBackup+ "/" +sender_id, 'r') 
+    except:
+        print "Fail"
+        return "cmpe297"
+    object = pickle.load(filehandler)
+    return object
 
 def send_message(token, user_id, text):
     """Send the message text to recipient with id recipient.
@@ -112,12 +182,11 @@ import execute
 sess = tf.Session()
 sess, model_SeqToSeq, enc_vocab, rev_dec_vocab = execute.init_session(sess, conf='seq2seq/seq2seq_serve.ini')
 
-from model import Model
-from prepareTrainingData import TrainingData
+from model import ModelCollection
+from prepareRawData import RawData
 from prepareResponse import ResponseData
 
-model = Model()
-model.createModel()
+model = ModelCollection()
 
 
 if (__name__ == "__main__"):

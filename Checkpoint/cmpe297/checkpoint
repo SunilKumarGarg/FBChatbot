@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/sunil/project/FBChatbot/Checkpoint/cmpe297/my_model"
+all_model_checkpoint_paths: "/home/sunil/project/FBChatbot/Checkpoint/cmpe297/my_model"

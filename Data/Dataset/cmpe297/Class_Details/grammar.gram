@@ -1,0 +1,7 @@
+public <S> =<Description><Class>details | <t1> | <t2>|<t3>;
+
+<t1> = Can you <Description> me (<Class>) details;
+<Class> = lecture | class | session | course;
+<Description> = Describe | tell | elaborate| provide | give;
+<t2> = What is <Class> about;
+<t3> = Tell me about <Class>;

@@ -4,8 +4,8 @@ import random
 
 class ResponseData:
     @staticmethod
-    def __init__():
-        ResponseData.data = ReadResponseData().getData()
+    def __init__(Context):
+        ResponseData.data = ReadResponseData(Context).getData()
         
     @staticmethod
     def getResponseData(target):

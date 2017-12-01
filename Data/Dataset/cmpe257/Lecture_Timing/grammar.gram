@@ -1,0 +1,11 @@
+public <S> = <NP> <VP> | <thing>;
+
+<NP> = When | <WW><DD>;
+<VP> = <Verb><lecture>;
+<WW> = which|what;
+<DD> = day | date;
+<Verb> = is | was;
+<lecture> = lecture | class| session;
+<thing> = how <duration> <Verb><lecture>;
+<duration> = long | hours;
+
