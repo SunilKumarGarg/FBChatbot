@@ -8,8 +8,8 @@ import dateutil.parser
 
 app = Flask(__name__)
 
-PAT = "EAACyecYYj3EBANIADdMnUIrgz0ZBrdoORl1yr028DrRN0eDUmiRGtwsGOXAwEFRkmRdQ0uakb0qzoyh8sjoJEorGZBUb92bgaSQody6NGwGlrMSBxZBzokrVC7ZAZCPhEM3Mfssb6ck7Gs04wlmKlgcAidgPZC96GTfb4lL44zLgZDZD"
-VERIFICATION_TOKEN = 'ThisIsMe'
+PAT = ""
+VERIFICATION_TOKEN = ''
 fileBackup = "Chatbackup"
 
 @app.route('/', methods=['GET'])
