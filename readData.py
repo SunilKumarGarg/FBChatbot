@@ -2,6 +2,16 @@ import sys, os
 
 from tockenizeData import TockenizeData
 
+class ReadContext:
+    @staticmethod
+    def __init__():
+        ReadContext.Context = []
+        for path, dirs, files in os.walk("Data/Dataset"):
+            for d in dirs:                
+                ReadContext.Context.append(d)
+            break
+
+
 class ReadResponseData:
     @staticmethod
     def __init__(Context):
@@ -54,4 +64,5 @@ class ReadRawData:
 
 
 if __name__ == '__main__':
-    print ReadRawData("cmpe297").getData()
+    print ReadContext().Context
+    #print ReadRawData("cmpe297").getData()

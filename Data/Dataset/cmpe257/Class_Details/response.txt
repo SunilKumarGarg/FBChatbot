@@ -1,2 +1,2 @@
-Classes are very good.
-Classes contains lectures, lab and quizes. 
+Class covers basics and advance concept of Machine learning.
+Class has lectures, quiz, assignment and group project about Machine learning. 

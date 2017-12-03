@@ -1,13 +1,2 @@
-when professor can come
-when professor should come
-when professor might come
-what time professor that the professor can come can come
-what time professor that the professor can come should come
-what time professor that the professor can come might come
-what time professor that the professor should come can come
-what time professor that the professor should come should come
-what time professor that the professor should come might come
-what time professor that the professor might come can come
-what time professor that the professor might come should come
-what time professor that the professor might come might come
-what is professor timing
+Bye
+Thanks

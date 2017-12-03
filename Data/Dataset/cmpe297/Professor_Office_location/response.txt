@@ -1,2 +1,2 @@
-professor office location is Health Building
-Professor office location is Health Bldg
+professor office location is in Health Building
+Professor office location is in Health Bldg

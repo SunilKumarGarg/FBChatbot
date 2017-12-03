@@ -7,5 +7,5 @@ public <S> = <NP> <VP> | <thing>;
 <Verb> = is | was;
 <exam> = exam | Final test| examination| final quiz;
 <thing> = how <duration> <Verb><exam>;
-<duration> = long | hours;
+<duration> = long | many hours;
 

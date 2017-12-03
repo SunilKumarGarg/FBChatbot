@@ -1,2 +1,2 @@
-professor office location is in Engineering Bldg
-Professor office location is in Engineering Dept.
+professor office location is in Engineering Building
+Professor office location is in Engineering Bldg

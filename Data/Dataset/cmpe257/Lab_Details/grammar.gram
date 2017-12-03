@@ -4,6 +4,6 @@ public <S> = <NP> <VP> | <NP><lab>| <Description>about<lab>;
 <VP> = <Modal> <lab>;
 
 
-<lab> = lab | assignment;
+<lab> = lab | assignment | assign;
 <Modal> = /10/ is | /15/ was | /5/ may;
 <Description> = Describe | tell | elaborate;

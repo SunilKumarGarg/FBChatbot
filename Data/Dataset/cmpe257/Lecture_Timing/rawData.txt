@@ -4,12 +4,6 @@ When is session
 When was lecture
 When was class
 When was session
-Where is lecture
-Where is class
-Where is session
-Where was lecture
-Where was class
-Where was session
 which day is lecture
 which day is class
 which day is session
@@ -22,6 +16,12 @@ which date is session
 which date was lecture
 which date was class
 which date was session
+which time is lecture
+which time is class
+which time is session
+which time was lecture
+which time was class
+which time was session
 what day is lecture
 what day is class
 what day is session
@@ -34,15 +34,21 @@ what date is session
 what date was lecture
 what date was class
 what date was session
+what time is lecture
+what time is class
+what time is session
+what time was lecture
+what time was class
+what time was session
 how long is lecture
 how long is class
 how long is session
 how long was lecture
 how long was class
 how long was session
-how hours is lecture
-how hours is class
-how hours is session
-how hours was lecture
-how hours was class
-how hours was session
+how many hours is lecture
+how many hours is class
+how many hours is session
+how many hours was lecture
+how many hours was class
+how many hours was session

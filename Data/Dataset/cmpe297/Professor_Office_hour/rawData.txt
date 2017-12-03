@@ -2,7 +2,11 @@ What professor office Time
 What professor office Hour
 What teacher office Time
 What teacher office Hour
+What prof office Time
+What prof office Hour
 when professor office Time
 when professor office Hour
 when teacher office Time
 when teacher office Hour
+when prof office Time
+when prof office Hour

@@ -1,15 +1,1 @@
-public <S> = <NP> <VP> | <thing>;
-
-<NP> = /5/ when professor | /1/ what time professor <CP>;
-<VP> = <Modal> come;
-
-<CP> = that <S2>;
-
-<S2> = <NP2> <VP>;
-
-<NP2> = the professor;
-
-<Modal> = /10/ can | /15/ should | /5/ might;
-
-<thing> = what is professor timing;
-
+public <S> = Bye | Thanks;

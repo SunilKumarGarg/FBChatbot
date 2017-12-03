@@ -76,3 +76,6 @@ where classroom
 which place class
 which place lecture
 which place classroom
+Tell me about class location
+Tell me about lecture location
+Tell me about classroom location

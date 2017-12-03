@@ -54,11 +54,11 @@ how long was exam
 how long was Final test
 how long was examination
 how long was final quiz
-how hours is exam
-how hours is Final test
-how hours is examination
-how hours is final quiz
-how hours was exam
-how hours was Final test
-how hours was examination
-how hours was final quiz
+how many hours is exam
+how many hours is Final test
+how many hours is examination
+how many hours is final quiz
+how many hours was exam
+how many hours was Final test
+how many hours was examination
+how many hours was final quiz

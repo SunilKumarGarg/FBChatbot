@@ -1,2 +1,2 @@
-I will give you the syllabus
-Here is the syllabus.....tringgg.......tringgggg.......tringggggggg
+Syllabus is basics of machine learning, regression model, classification model, basic concept of deep learning and reinforcement learning.
+Here is the syllabus https://sjsu.instructure.com/courses/1243524/files?preview=47710913

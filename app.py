@@ -5,6 +5,8 @@ import pickle
 from json import dumps
 import spellCheck
 import dateutil.parser
+from readData import ReadContext
+import tagger
 
 app = Flask(__name__)
 
@@ -32,28 +34,20 @@ def reply():
         try:
             if message['type'] == 'text':
                 sentence = str(message["data"]).lower()
-                # try:
-                #     date, data = dateutil.parser.parse(sentence, fuzzy_with_tokens=True)
-                #     sent = []
-                #     sent.append(str(date))
-                #     for w in list(data):
-                #         sent.append(w)
-                #     sentence = " ".join(sent)
-                # except:
-                #     print "exception"
 
-                # words = sentence.split(" ")
-                # correctWords = []
-                # for w in words:
-                #     correctWords.append(spellCheck.correction(w))
+                if "what:" in sentence:
+                    tag = tagger.TagDetection(sentence.replace("what:",""))
 
-                # sentence = " ".join(correctWords)
+                    s = "\n"
+                    for i,t in tag:
+                        if i != "" and t != "O":
+                            s = s + i + ":" + t + "\n"
+
+                    send_message(PAT, sender_id, s)
+                    return "ok"
+
                 context = loadChatHistory(str(sender_id))                
-                c = getContext(sentence)
-                print sentence
-                if sentence != str(message["data"]).lower():
-                    send_message(PAT, sender_id, "User Input:" + sentence)
-                    
+                c = getContext(sentence)                    
 
                 if c != "None":
                     context = c
@@ -71,12 +65,14 @@ def reply():
                     sentence = " ".join(correctWords)
                     print sentence
                     if sentence != str(message["data"]).lower():
-                        send_message(PAT, sender_id, "User Input:" + sentence)
+                        send_message(PAT, sender_id, "Corrected Input:" + sentence)
                     result = model.predictTarget(context,sentence)
                     target = RawData(context).returnTarget(result)
 
                     if target == "None":
                         text = execute.decode_line(sess, model_SeqToSeq, enc_vocab, rev_dec_vocab, sentence)
+                        if "_UNK" in text:
+                            text = "Sorry, I did not understand."
                     else:
                         text = ResponseData(context).getResponseData(target)
                 else:
@@ -90,7 +86,7 @@ def reply():
     return "ok"
 
 def getContext(var):
-    contextList = ["cmpe297", "cmpe257"]
+    contextList = ReadContext().Context
     for c in contextList:
         if c in var:
             return c

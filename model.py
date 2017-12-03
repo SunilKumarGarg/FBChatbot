@@ -1,19 +1,20 @@
 from prepareRawData import RawData
 from prepareResponse import ResponseData
 from sklearn.model_selection import train_test_split
+from readData import ReadContext
 
 import tflearn
 import tensorflow as tf
 
 class ModelCollection:
     def __init__(self):
-        self.ContextList = ["cmpe297","cmpe257"]       
+        self.ContextList = ReadContext().Context   
         self.model = {}
         for c in self.ContextList:
             self.model[c] = Model(c)
             self.model[c].createModel()
 
-    def predictTarget(self, context, var):
+    def predictTarget(self, context, var):        
         
         if context not in self.ContextList:
             return "None"
@@ -33,14 +34,10 @@ class Model:
         X_train, X_test, y_train, y_test = train_test_split(self.X, self.Y, test_size=0.2, random_state=42)
         tf.reset_default_graph()        
         net = tflearn.input_data(shape=[None, len(X_train[0])])
-        net = tflearn.fully_connected(net, 32)
-        net = tflearn.fully_connected(net, 32)
+        net = tflearn.fully_connected(net, 64)
+        net = tflearn.fully_connected(net, 64)
         net = tflearn.fully_connected(net, len(y_train[0]), activation='softmax')
         net = tflearn.regression(net)
-
-        print "Here"
-        print X_train
-        print "Here"
 
         # Define model and setup tensorboard
         self.model = tflearn.DNN(net, tensorboard_dir='tflearn_logs')
@@ -56,6 +53,8 @@ class Model:
             self.model.save("Checkpoint/" + self.Context + "/my_model")
 
     def predictTarget(self, sentence):
+        sentence = sentence.replace("where","location")
+        sentence = sentence.replace("when","time")
         data = RawData(self.Context).convertXToIntegerArray(sentence)
         r = self.model.predict([data])
         result = []

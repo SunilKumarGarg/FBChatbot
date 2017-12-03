@@ -2,5 +2,5 @@ public <S> = <WW><Prof> office <Time>;
 
 
 <WW> = What | when;
-<Prof> = professor | teacher;
+<Prof> = professor | teacher | prof;
 <Time> = Time | Hour;

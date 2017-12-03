@@ -25,6 +25,15 @@ where prop should office
 where prop might sit
 where prop might meet
 where prop might office
+where prof can sit
+where prof can meet
+where prof can office
+where prof should sit
+where prof should meet
+where prof should office
+where prof might sit
+where prof might meet
+where prof might office
 which place professor can sit
 which place professor can meet
 which place professor can office
@@ -52,3 +61,12 @@ which place prop should office
 which place prop might sit
 which place prop might meet
 which place prop might office
+which place prof can sit
+which place prof can meet
+which place prof can office
+which place prof should sit
+which place prof should meet
+which place prof should office
+which place prof might sit
+which place prof might meet
+which place prof might office
