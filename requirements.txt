@@ -28,7 +28,7 @@ scikit-learn==0.19.1
 scipy==1.0.0
 six==1.11.0
 sklearn==0.0
-tensorflow==1.4.0
+tensorflow==2.5.0
 tensorflow-tensorboard==0.4.0rc2
 tflearn==0.3.2
 urllib3==1.22
